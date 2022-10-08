@@ -18,6 +18,9 @@
       Console.WriteLine("2 - Subtração");
       Console.WriteLine("3 - Multiplicação");
       Console.WriteLine("4 - Divisão");
+      Console.WriteLine("5 - Resto da Divisão");
+      Console.WriteLine("6 - Potenciação");
+      Console.WriteLine("7 - Raiz Quadrada");
       Console.WriteLine("0 - Sair");
       Console.WriteLine(Program.column);
       
@@ -34,61 +37,140 @@
         System.Environment.Exit(0);
       }
       
-      HandleData(option);
+      HandleOption(option);
     }
 
-    static void HandleData(short option)
+    static void HandleOption(short option)
     {
       Console.Clear();
-      Console.WriteLine($"Option: {option}");
-      double num1, num2;
-
-      Console.WriteLine(Program.column);
-      Console.Write("Primeiro valor: ");
-      num1 = double.Parse(Console.ReadLine());
-
-      Console.WriteLine(Program.column);
-      Console.Write("Segundo valor: ");
-      num2 = double.Parse(Console.ReadLine());
-      Console.WriteLine(Program.column);
 
       switch(option)
       {
-        case 1: Addition(num1, num2); break;
-        case 2: Subtraction(num1, num2); break;
-        case 3: Multiplication(num1, num2); break;
-        case 4: Division(num1, num2); break;
-        default: Menu(); break;
+        case 1: Addition(); break;
+        case 2: Subtraction(); break;
+        case 3: Multiplication(); break;
+        case 4: Division(); break;
+        case 5: RestDivision(); break;
+        case 6: Potenciation(); break;
+        case 7: Square(); break;
+        default:
+        {
+          Console.WriteLine("Por favor, digite uma opção válida!");
+          Console.ReadKey();
+          Console.Clear();
+          Menu();
+        }; break;
       }
     }
 
-    static void Addition(double num1, double num2)
-    {      
+    static void Addition()
+    {
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o primeiro valor: ");
+      double num1 = double.Parse(Console.ReadLine());
+
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o segundo valor: ");
+      double num2 = double.Parse(Console.ReadLine());
+      Console.WriteLine(Program.column);
+
       Console.WriteLine($"O resultado da soma é: {num1 + num2}");
       Console.ReadKey();
       Console.Clear();
       Menu();
     }
 
-    static void Subtraction(double num1, double num2)
+    static void Subtraction()
     {
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o primeiro valor: ");
+      double num1 = double.Parse(Console.ReadLine());
+
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o segundo valor: ");
+      double num2 = double.Parse(Console.ReadLine());
+      Console.WriteLine(Program.column);
+
       Console.WriteLine($"O resultado da subtração é: {num1 - num2}");
       Console.ReadKey();
       Console.Clear();
       Menu();
     }
 
-    static void Multiplication(double num1, double num2)
+    static void Multiplication()
     {
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o primeiro valor: ");
+      double num1 = double.Parse(Console.ReadLine());
+
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o segundo valor: ");
+      double num2 = double.Parse(Console.ReadLine());
+      Console.WriteLine(Program.column);
+      
       Console.WriteLine($"O resultado da multiplicação é: {num1 * num2}");
       Console.ReadKey();
       Console.Clear();
       Menu();
     }
 
-    static void Division(double num1, double num2)
+    static void Division()
     {
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o primeiro valor: ");
+      double num1 = double.Parse(Console.ReadLine());
+
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o segundo valor: ");
+      double num2 = double.Parse(Console.ReadLine());
+      Console.WriteLine(Program.column);
+
       Console.WriteLine($"O resultado da divisão é: {num1 / num2}");
+      Console.ReadKey();
+      Console.Clear();
+      Menu();
+    }
+
+    static void RestDivision()
+    {
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o primeiro valor: ");
+      double num1 = double.Parse(Console.ReadLine());
+
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o segundo valor: ");
+      double num2 = double.Parse(Console.ReadLine());
+      Console.WriteLine(Program.column);
+
+      Console.WriteLine($"O resultado do resto da divisão é: {num1 % num2}");
+      Console.ReadKey();
+      Console.Clear();
+      Menu();
+    }
+
+    static void Potenciation()
+    {
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o primeiro valor: ");
+      double num1 = double.Parse(Console.ReadLine());
+
+      Console.WriteLine(Program.column);
+      Console.Write("Digite o segundo valor: ");
+      double num2 = double.Parse(Console.ReadLine());
+      Console.WriteLine(Program.column);
+
+      Console.WriteLine($"O resultado da potenciação é: {Math.Pow(num1, num2)}");
+      Console.ReadKey();
+      Console.Clear();
+      Menu();
+    }
+
+    static void Square()
+    {Console.WriteLine(Program.column);
+      Console.Write("Digite um valor: ");
+      double num = double.Parse(Console.ReadLine());
+
+      Console.WriteLine($"O resultado da raiz quadrada é: {Math.Sqrt(num)}");
       Console.ReadKey();
       Console.Clear();
       Menu();
